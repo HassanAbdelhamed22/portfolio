@@ -4,7 +4,9 @@ import { FaSun, FaMoon } from "react-icons/fa";
 interface IProps {}
 
 const DarkMode = ({}: IProps) => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
 
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
@@ -19,14 +21,14 @@ const DarkMode = ({}: IProps) => {
     }
     localStorage.setItem("darkMode", darkMode.toString());
   }, [darkMode]);
-  return (    
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="text-xl text-gray-800 dark:text-gray-200"
-          aria-label="Toggle Dark Mode"
-        >
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
+  return (
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className="text-xl text-gray-800 dark:text-gray-200"
+      aria-label="Toggle Dark Mode"
+    >
+      {darkMode ? <FaSun /> : <FaMoon />}
+    </button>
   );
 };
 

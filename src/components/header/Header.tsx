@@ -1,11 +1,9 @@
-interface IProps {
+import DarkMode from "../DarkMode";
 
-}
+interface IProps {}
 
 const Header = ({}: IProps) => {
-  return (
-    <div>Header</div>
-  )
-}
+  return <DarkMode />;
+};
 
-export default Header
+export default Header;
