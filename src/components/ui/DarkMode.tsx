@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-interface IProps {}
+interface IProps {
+  className?: string;
+}
 
-const DarkMode = ({}: IProps) => {
+const DarkMode = ({ className = "" }: IProps) => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     return localStorage.getItem("darkMode") === "true";
   });
@@ -21,11 +23,13 @@ const DarkMode = ({}: IProps) => {
     }
     localStorage.setItem("darkMode", darkMode.toString());
   }, [darkMode]);
+
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="text-xl text-gray-800 dark:text-gray-200"
       aria-label="Toggle Dark Mode"
+      aria-pressed={darkMode}
+      className={`text-xl text-gray-800 dark:text-gray-200 bg-[#fafafa] dark:bg-[#252529] p-[0.7rem] rounded-3xl shadow-md hover:bg-gray-200 dark:hover:bg-[#1f1f22] transition-colors duration-300 ml-auto sm:ml-0 border dark:border-borderDark border-borderLight ${className}`}
     >
       {darkMode ? <FaSun /> : <FaMoon />}
     </button>
