@@ -9,15 +9,14 @@ export default {
         darkBg: "#252529",
         lightText: "#27272a",
         darkText: "#f4f4f5",
-        secondaryLightText: "#7e7e85",
+        secondaryLightText: "#52525b",
         secondaryDarkText: "#A1A1AA",
-        borderLight: "#f4f4f5",
-        borderDark: "#3f3f4666",
+        borderLight: "#e4e4e7",
+        borderDark: "#4b4b52",
         accent: "#5DBCFC",
         hoverBg: "#1f1f22",
         hoverText: "#ffffff",
         subtitle: "rgb(161, 161, 170)",
-        
       },
       keyframes: {
         customScale: {

@@ -27,11 +27,12 @@ const Hero = ({}: IProps) => {
             Software engineer and front-end developer.
           </h1>
           <p className="text-base text-secondaryLightText dark:text-secondaryDarkText mt-6">
-            My name is Hassan Abdelhamed, and I am a dedicated software engineer
-            specializing in front-end development with React.js. I am skilled in
-            JavaScript, TypeScript, and CSS frameworks and currently pursuing a
-            degree in Computer and Artificial Intelligence at Helwan University,
-            with an expected graduation in 2025.
+            I’m Hassan Abdelhamed, a software engineer and frontend developer
+            with a passion for creating dynamic and intuitive web experiences.
+            Specializing in React.js, I leverage my skills in JavaScript,
+            TypeScript, and modern CSS frameworks to build high-performance
+            applications. Let’s bring your ideas to life with clean and
+            efficient code.
           </p>
         </div>
         <div className="flex mt-6 gap-6 items-center">
