@@ -1,11 +1,93 @@
-interface IProps {
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { MdVerified } from "react-icons/md";
+import img from "../../assets/me.png";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import devAnimation from "../../assets/dev.json";
+import { useRef } from "react";
 
-}
+interface IProps {}
 
 const Hero = ({}: IProps) => {
-  return (
-    <div>Hero</div>
-  )
-}
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
 
-export default Hero
+  return (
+    <div className="flex items-center justify-between mt-12">
+      <div className="left-section relative xl:mr-16 flex-1">
+        <div className="flex items-end gap-2">
+          <img
+            src={img}
+            alt="Profile"
+            className="w-20 h-20 object-cover bg-zinc-100 dark:bg-zinc-800 rounded-full border-2 border-orange-200 dark:border-orange-200 p-[1px]"
+          />
+          <MdVerified className="flex items-end text-accent text-[1.1rem] mb-1" />
+        </div>
+
+        <div className="max-w-xl xl:max-w-3xl mt-4 xl:mt-0">
+          <h1 className="text-lightText dark:text-darkText text-3xl font-bold sm:text-5xl mt-8">
+            Software engineer and front-end developer.
+          </h1>
+          <p className="text-base text-secondaryLightText dark:text-secondaryDarkText mt-6">
+            My name is Hassan Abdelhamed, and I am a dedicated software engineer
+            specializing in front-end development with React.js. I am skilled in
+            JavaScript, TypeScript, and CSS frameworks and currently pursuing a
+            degree in Computer and Artificial Intelligence at Helwan University,
+            with an expected graduation in 2025.
+          </p>
+        </div>
+        <div className="flex mt-6 gap-6 items-center">
+          <a
+            href="https://github.com/HassanAbdelhamed22"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <FaGithub className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+          <a
+            href="https://linkedin.com/in/hassanabdelhamedh22/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <FaLinkedin className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+          <a
+            href="https://www.instagram.com/hassan_abdelhamed1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <FaInstagram className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1pAQa5KwTOwJ60K7W0m2sD9ZZ1H2PwxpR/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button
+              className="bg-inherit border border-accent text-lightText dark:text-darkText px-4 py-2 rounded-lg  text-sm
+             hover:bg-accent
+             hover:text-white hover:border-transparent transform hover:shadow-lg transition duration-300"
+            >
+              Download CV
+            </button>
+          </a>
+        </div>
+      </div>
+      <div className="right-section hidden xl:block flex-1">
+        <Lottie
+          lottieRef={lottieRef}
+          onLoadedImages={() => {
+            if (lottieRef.current) {
+              lottieRef.current.setSpeed(0.5);
+            }
+          }}
+          animationData={devAnimation}
+          className="w-full h-auto"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

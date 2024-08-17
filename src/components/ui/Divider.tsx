@@ -1,5 +1,5 @@
 export default function Divider() {
   return (
-    <div className="border-b  border-[#f9f9f9] dark:border-[#3f3f4666] my-[3rem] mx-0"></div>
+    <div className="border-b border-borderLight dark:border-borderDark my-[3rem] w-[calc(100% + 2rem)] ml-[-2rem] mr-[-2rem] md:w-[calc(100% + 4rem)] md:ml-[-4rem] md:mr-[-4rem]"></div>
   );
 }

@@ -5,11 +5,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        lightBg: "#fafafa",
+        lightBg: "#fff",
         darkBg: "#252529",
         lightText: "#27272a",
         darkText: "#f4f4f5",
-        borderLight: "rgba(224,224,224,0.8)",
+        secondaryLightText: "#7e7e85",
+        secondaryDarkText: "#A1A1AA",
+        borderLight: "#f4f4f5",
         borderDark: "#3f3f4666",
         accent: "#5DBCFC",
         hoverBg: "#1f1f22",

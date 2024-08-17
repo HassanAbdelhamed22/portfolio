@@ -7,9 +7,8 @@ import Divider from "./components/ui/Divider";
 
 function App() {
   return (
-    <div className="container bg-white border-2 border-borderLight dark:bg-darkBg dark:border-borderDark w-[90%] dark:text-darkText">
+    <div className="container bg-white border-2 border-borderLight dark:bg-darkBg dark:border-borderDark w-[85%] dark:text-darkText px-8 md:px-16">
       <Header />
-      <Divider />
       <Hero />
       <Divider />
       <Main />

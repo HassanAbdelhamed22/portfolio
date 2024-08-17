@@ -17,13 +17,13 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
   return (
-    <Disclosure as="nav" className="mx-[2.4rem] mt-[1.2rem]">
+    <Disclosure as="nav" className="mt-[1.2rem]">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               {/* Mobile menu button */}
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                 <Disclosure.Button
                   className="inline-flex items-center justify-center text-xl text-gray-800 dark:text-gray-200 bg-[#fafafa] dark:bg-[#252529] p-[0.7rem] rounded-3xl shadow-md hover:bg-gray-200 dark:hover:bg-[#1f1f22] transition-colors duration-300 ml-auto sm:ml-0 border dark:border-borderDark border-borderLight"
                   aria-label={open ? "Close main menu" : "Open main menu"}
@@ -37,7 +37,7 @@ export default function Header() {
               </div>
 
               {/* Centered Links with Rounded Background (visible on lg screens and larger) */}
-              <div className="hidden sm:flex flex-1 items-center justify-center">
+              <div className="hidden md:flex flex-1 items-center justify-center">
                 <div className="flex flex-col items-center justify-center">
                   <div className="rounded-full bg-[#fff] dark:bg-[rgba(40,40,48,0.8)] py-2 px-6 backdrop-blur-md shadow-md">
                     <div className="flex space-x-4">
@@ -75,7 +75,7 @@ export default function Header() {
           {/* Mobile Menu */}
           <Disclosure.Panel>
             <div className="fixed inset-0 bg-[rgba(250,250,250,0.11)] dark:bg-[rgba(40,40,48,0.8)] z-10">
-              <div className="flex flex-col items-center justify-center p-4 space-y-4 w-[85%] ml-auto mr-auto mt-[2rem] rounded-2xl py-4 px-8 dark:bg-darkBg bg-white animate-customScale">
+              <div className="flex flex-col items-center justify-center p-4 space-y-4 w-[85%] ml-auto mr-auto mt-[2rem] rounded-2xl py-4 px-8 dark:bg-darkBg backdrop:blur-md bg-white animate-customScale">
                 <Disclosure.Button
                   className="self-end transition duration-300   text-subtitle hover:text-[#B22222] hover:rotate-180 "
                   aria-label="Close mobile menu"
