@@ -1,14 +1,22 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdVerified } from "react-icons/md";
 import img from "../../assets/me.png";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import devAnimation from "../../assets/dev.json";
 import { useRef } from "react";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 interface IProps {}
 
 const Hero = ({}: IProps) => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+  // Correctly type the useTypewriter hook
+  const [text, _] = useTypewriter({
+    words: ["Software Engineer", "Front-end Developer"],
+    loop: true,
+    typeSpeed: 120,
+  });
 
   return (
     <div className="flex items-center justify-between mt-12">
@@ -23,8 +31,14 @@ const Hero = ({}: IProps) => {
         </div>
 
         <div className="max-w-xl xl:max-w-3xl mt-4 xl:mt-0">
-          <h1 className="text-lightText dark:text-darkText text-3xl font-bold sm:text-5xl mt-8">
-            Software engineer and front-end developer.
+          <h1 className="text-lightText dark:text-darkText text-4xl font-bold sm:text-5xl mt-8 flex flex-col gap-2">
+            <span className="text-2xl text-secondaryLightText dark:text-secondaryDarkText">
+              Hi I'm,
+            </span>
+            <span className="flex items-center">
+              {text}
+              <Cursor cursorStyle="|" /> {/* Adjust cursor position */}
+            </span>
           </h1>
           <p className="text-base text-secondaryLightText dark:text-secondaryDarkText mt-6">
             I’m Hassan Abdelhamed, a software engineer and frontend developer
@@ -60,6 +74,15 @@ const Hero = ({}: IProps) => {
           >
             <FaInstagram className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
           </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=201012854740"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <FaWhatsapp className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+
           <a
             href="https://drive.google.com/file/d/1pAQa5KwTOwJ60K7W0m2sD9ZZ1H2PwxpR/view?usp=drive_link"
             target="_blank"

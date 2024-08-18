@@ -28,6 +28,9 @@ export default {
       animation: {
         customScale: "customScale 0.5s ease-in-out", // Duration and timing function can be adjusted
       },
+      scale: {
+        scaleCard: 'scale(1)'
+      }
     },
     container: {
       center: true,

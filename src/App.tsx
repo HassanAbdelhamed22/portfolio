@@ -4,15 +4,18 @@ import Main from "./components/main/Main";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Divider from "./components/ui/Divider";
-import AboutMe from "./components/aboutMe/AboutMe";
+
+import Skills from "./components/skills/Skills";
 
 function App() {
+
+
   return (
     <div className="container bg-white border-[1px] border-borderLight dark:bg-darkBg dark:border-borderDark w-[85%] dark:text-darkText px-8 md:px-16">
       <Header />
       <Hero />
       <Divider />
-      <AboutMe />
+      <Skills />
       <Divider />
       <Main />
       <Divider />

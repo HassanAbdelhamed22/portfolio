@@ -1,0 +1,45 @@
+/* styles/slider.css */
+
+/* Custom styles for the slider arrows */
+.slick-prev,
+.slick-next {
+  color: #5DBCFC; /* Default arrow color for light mode */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #FF5733; /* Arrow color on hover */
+}
+
+/* Dark mode styling for arrows */
+@media (prefers-color-scheme: dark) {
+  .slick-prev,
+  .slick-next {
+    color: #FF5733; /* Default arrow color for dark mode */
+  }
+
+  .slick-prev:hover,
+  .slick-next:hover {
+    color: #5DBCFC; /* Arrow color on hover in dark mode */
+  }
+}
+
+/* Style for slider dots */
+.slick-dots li button:before {
+  color: #5DBCFC; /* Default dot color for light mode */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #FF5733; /* Active dot color */
+}
+
+/* Dark mode styling for dots */
+@media (prefers-color-scheme: dark) {
+  .slick-dots li button:before {
+    color: #FF5733; /* Dot color for dark mode */
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: #5DBCFC; /* Active dot color in dark mode */
+  }
+}
