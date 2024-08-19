@@ -11,5 +11,14 @@ export interface IEducation {
   title: string;
   location: string;
   description: string[];
-  GPA?: string
+  GPA?: string;
+}
+
+export interface IProject {
+  image: string;
+  title: string;
+  description: string;
+  repoLink: string;
+  liveLink?: string;
+  category: string;
 }

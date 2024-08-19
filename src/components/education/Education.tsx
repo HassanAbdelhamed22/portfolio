@@ -8,7 +8,7 @@ const Education = () => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 
   return (
-    <section className="py-10 px-0 sm:px-4">
+    <section id="education" className="py-10 px-0 sm:px-4">
       <div className="flex flex-col md:flex-row items-center justify-center md:space-x-6">
         <div className="flex items-center justify-center mb-6 md:mb-0">
           <Lottie

@@ -26,7 +26,30 @@ import {
   SiDotnet,
   SiCplusplus,
 } from "react-icons/si";
-import { IEducation, ISkills } from "../interfaces";
+import { IEducation, IProject, ISkills } from "../interfaces";
+import {
+  adminPage,
+  bankTransfer,
+  crud,
+  guessMyNumber,
+  huddle,
+  landingPage,
+  todoList,
+  uiUtopia,
+  bankist,
+  dashboard,
+  ecommerce,
+  fitnessApp,
+  forkify,
+  furniture,
+  mapty,
+  omnifood,
+  pigGame,
+  portfolio,
+  prayerTimings,
+  productsBuilder,
+  startReact,
+} from '../assets/projectsImg';
 
 const skillsList: ISkills[] = [
   {
@@ -110,4 +133,8 @@ export const educationData: IEducation[] = [
     ],
     GPA: "3.19",
   },
+];
+
+export const projectData: IProject[] = [
+
 ];

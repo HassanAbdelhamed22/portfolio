@@ -1,14 +1,13 @@
-import { Disclosure, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import DarkMode from "../ui/DarkMode";
-import img from "../../../public/me.png";
 
 const navigation = [
-  { name: "About", href: "#", current: false },
-  { name: "Articles", href: "#", current: false },
+  { name: "Home", href: "#", current: false },
+  { name: "Skills", href: "#skills", current: false },
+  { name: "Education", href: "#education", current: false },
   { name: "Projects", href: "#", current: false },
-  { name: "Speaking", href: "#", current: false },
-  { name: "Uses", href: "#", current: false },
+  { name: "Contact", href: "#", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -17,7 +16,7 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
   return (
-    <Disclosure as="nav" className="mt-[1.2rem]">
+    <Disclosure as="nav" className="mt-[1.2rem] sticky top-0 z-50">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
