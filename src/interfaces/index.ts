@@ -20,5 +20,5 @@ export interface IProject {
   description: string;
   repoLink: string;
   liveLink?: string;
-  category: string;
+  category: "React" | "React & Typescript" | "JS" | "HTML & CSS" | "ASP.net";
 }

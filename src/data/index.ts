@@ -49,7 +49,7 @@ import {
   prayerTimings,
   productsBuilder,
   startReact,
-} from '../assets/projectsImg';
+} from "../assets/projectsImg";
 
 const skillsList: ISkills[] = [
   {
@@ -136,5 +136,173 @@ export const educationData: IEducation[] = [
 ];
 
 export const projectData: IProject[] = [
-
+  {
+    image: ecommerce,
+    title: "E-commerce App",
+    description:
+      "HTML, CSS, JS, Bootstrap, React.js, Formik, Yup, React Query, React Router Dom, JWT Decode, Axios, Use Context and React Slider",
+    repoLink: "https://github.com/HassanAbdelhamed22/E-Commerce",
+    liveLink: "https://hassanabdelhamed22.github.io/E-Commerce/",
+    category: "React",
+  },
+  {
+    image: fitnessApp,
+    title: "Fitness App",
+    description:
+      "HTML, CSS, JS, Material UI, React.js, Rapid API, React Router Dom, Axios, Use Context and React Slider",
+    repoLink: "https://github.com/HassanAbdelhamed22/Fitness-App",
+    liveLink: "https://fitness-app-hassan-abdelhameds-projects.vercel.app/",
+    category: "React",
+  },
+  {
+    image: prayerTimings,
+    title: "Prayer Timings",
+    description: "HTML, CSS, JS, Material UI, React.js and Moment.js",
+    repoLink: "https://github.com/HassanAbdelhamed22/Prayer-Timings",
+    liveLink: "https://prayer-timings-eight.vercel.app/",
+    category: "React",
+  },
+  {
+    image: productsBuilder,
+    title: "Products Builder",
+    description: "HTML, CSS, Typescript, Tailwind CSS and React.js",
+    repoLink: "https://github.com/HassanAbdelhamed22/Products-Bulider",
+    liveLink: "https://products-bulider.vercel.app/",
+    category: "React & Typescript",
+  },
+  {
+    image: portfolio,
+    title: "Portfolio",
+    description: "HTML, CSS, Typescript, Tailwind CSS and React.js",
+    repoLink: "https://github.com/HassanAbdelhamed22/portfolio",
+    category: "React & Typescript",
+  },
+  {
+    image: adminPage,
+    title: "User Management",
+    description: "HTML, CSS, Bootstrap, MySql, Ado.net and ASP.net",
+    repoLink:
+      "https://github.com/HassanAbdelhamed22/User-Management-Systems-using-ASP.NET",
+    category: "ASP.net",
+  },
+  {
+    image: forkify,
+    title: "Forkify App",
+    description: "JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Forkify",
+    liveLink: "",
+    category: "JS",
+  },
+  {
+    image: mapty,
+    title: "Mapty",
+    description: "HTML, CSS and JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/mapty",
+    liveLink: "https://hassanabdelhamed22.github.io/mapty/",
+    category: "JS",
+  },
+  {
+    image: bankTransfer,
+    title: "Bank Transfer",
+    description: "HTML, CSS and JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Bank-Transfer",
+    liveLink: "https://hassanabdelhamed22.github.io/Bank-Transfer/",
+    category: "JS",
+  },
+  {
+    image: omnifood,
+    title: "Omnifood",
+    description: "HTML and CSS",
+    repoLink: "https://github.com/HassanAbdelhamed22/omnifood",
+    liveLink: "https://hassanabdelhamed22.github.io/omnifood/",
+    category: "HTML & CSS",
+  },
+  {
+    image: todoList,
+    title: "ToDo List App",
+    description: "HTML, CSS and JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/ToDo-List-App",
+    liveLink: "https://hassanabdelhamed22.github.io/ToDo-List-App/",
+    category: "JS",
+  },
+  {
+    image: bankist,
+    title: "Bankist App",
+    description: "HTML, CSS and JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Bankist",
+    liveLink: "https://hassanabdelhamed22.github.io/Bankist/",
+    category: "JS",
+  },
+  {
+    image: startReact,
+    title: "Start React App",
+    description: "HTML, CSS, React.js React Router DOM",
+    repoLink: "https://github.com/HassanAbdelhamed22/reactTest",
+    liveLink: "https://hassanabdelhamed22.github.io/reactTest/",
+    category: "React",
+  },
+  {
+    image: crud,
+    title: "CRUD App",
+    description: "HTML, CSS and JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/CRUD-js",
+    liveLink: "https://hassanabdelhamed22.github.io/CRUD-js/",
+    category: "JS",
+  },
+  {
+    image: dashboard,
+    title: "Dashboard",
+    description: "HTML, CSS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Dashboard",
+    liveLink: "https://hassanabdelhamed22.github.io/Dashboard/",
+    category: "HTML & CSS",
+  },
+  {
+    image: landingPage,
+    title: "Landing Page",
+    description: "HTML, CSS",
+    repoLink: "https://github.com/HassanAbdelhamed22/LandingPage",
+    liveLink: "https://hassanabdelhamed22.github.io/LandingPage/",
+    category: "HTML & CSS",
+  },
+  {
+    image: guessMyNumber,
+    title: "Guess My Number",
+    description: "HTML, CSS and JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Guess-My-Number",
+    liveLink: "https://hassanabdelhamed22.github.io/Guess-My-Number/",
+    category: "JS",
+  },
+  {
+    image: pigGame,
+    title: "Pig Game",
+    description: "HTML, CSS and JS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Pig-Game",
+    liveLink: "https://hassanabdelhamed22.github.io/Pig-Game/",
+    category: "JS",
+  },
+  {
+    image: uiUtopia,
+    title: "UI Utopia",
+    description: "HTML, CSS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Ui_Utopia",
+    liveLink: "https://hassanabdelhamed22.github.io/Ui_Utopia/",
+    category: "HTML & CSS",
+  },
+  {
+    image: huddle,
+    title: "Huddle Home Page",
+    description: "HTML, CSS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Huddle-Home-Page",
+    liveLink: "https://hassanabdelhamed22.github.io/Huddle-Home-Page/",
+    category: "HTML & CSS",
+  },
+  {
+    image: furniture,
+    title: "Furniture Home Page",
+    description: "HTML, CSS",
+    repoLink: "https://github.com/HassanAbdelhamed22/Furniture-Home-page",
+    liveLink: "https://hassanabdelhamed22.github.io/Furniture-Home-Page/",
+    category: "HTML & CSS",
+  },
 ];
