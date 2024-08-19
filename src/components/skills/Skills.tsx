@@ -3,29 +3,37 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slider.css";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import skillAnimation from "../../assets/Animation - 1723965204560.json"; // Import the custom CSS
+import skillAnimation from "../../assets/Animation - 1723965204560.json";
 import { useRef } from "react";
 
 const Skills = () => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 
   return (
-    <section className="py-10 px-4 lg: dark:lg:bg-[#1a1a1d] rounded-md bg-lightBg dark:bg-darkBg">
-      <div className="flex flex-row items-center justify-center">
+    <section className="py-10 px-4 lg:bg-[#e1e1e13c] lg: dark:lg:bg-[#1a1a1d] rounded-md bg-lightBg dark:bg-darkBg">
+      <div className="flex flex-row items-center justify-center space-x-1 lg:space-x-4">
         <div className="flex items-center justify-center">
           <Lottie
             lottieRef={lottieRef}
             onLoadedImages={() => {
               if (lottieRef.current) {
-                lottieRef.current.setSpeed(0.5);
+                lottieRef.current.setSpeed(0.8);
               }
             }}
             animationData={skillAnimation}
             className="w-28 h-28"
           />
         </div>
-        <h2 className="text-4xl font-bold text-accent">My Skills</h2>
+        <div className="text-center lg:text-left">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-lightText dark:text-darkText">
+            My Skills
+          </h2>
+          <p className="text-xs sm:text-sm lg:text-base text-accent tracking-[4px] mt-2">
+            What skills I have
+          </p>
+        </div>
       </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-10">
         {skillsList.map((item, index) => (
           <div

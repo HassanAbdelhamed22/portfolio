@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        lightBg: "#fff",
+        lightBg: "#fafafa",
         darkBg: "#252529",
         lightText: "#27272a",
         darkText: "#f4f4f5",
@@ -14,9 +14,10 @@ export default {
         borderLight: "#e4e4e7",
         borderDark: "#4b4b52",
         accent: "#5DBCFC",
+        // accent: "#6EC8FF",
         hoverBg: "#1f1f22",
         hoverText: "#ffffff",
-        subtitle: "rgb(161, 161, 170)",
+        subtitle: "rgb(131, 131, 140)",
       },
       keyframes: {
         customScale: {
@@ -29,8 +30,8 @@ export default {
         customScale: "customScale 0.5s ease-in-out", // Duration and timing function can be adjusted
       },
       scale: {
-        scaleCard: 'scale(1)'
-      }
+        scaleCard: "scale(1)",
+      },
     },
     container: {
       center: true,

@@ -26,7 +26,7 @@ import {
   SiDotnet,
   SiCplusplus,
 } from "react-icons/si";
-import { ISkills } from "../interfaces";
+import { IEducation, ISkills } from "../interfaces";
 
 const skillsList: ISkills[] = [
   {
@@ -76,3 +76,38 @@ const skillsList: ISkills[] = [
 ];
 
 export default skillsList;
+
+export const educationData: IEducation[] = [
+  {
+    date: "(Jul 2024 - Aug 2024)",
+    title: "Integration and Business Automation",
+    location: "SAIB Bank",
+    description: [
+      "Collaborated on-site for project alignment.",
+      "Gained expertise in SOAP API, REST API, Middleware, ESQL, and SQL.",
+      "Developed four applications using IBM App Connect Enterprise to enhance data flow and efficiency.",
+      "Learned ASP.NET Web Forms and built a user management project using ASP.NET and MySQL.",
+    ],
+  },
+  {
+    date: "(Jan 2024 - Feb 2024)",
+    title: "React JS Diploma",
+    location: "Route Training Center",
+    description: [
+      "Attended online classes twice a week.",
+      "Developed and maintained tasks using React.js, Redux Toolkit, TypeScript, Bootstrap, and SASS.",
+      "Completed an e-commerce project, showcasing practical application of skills learned.",
+    ],
+  },
+  {
+    date: "(2021 - 2025)",
+    title: "Computer Science",
+    location: "Helwan University",
+    description: [
+      "Pursuing a degree in Computer and Artificial Intelligence with a grade of 'Very Good'.",
+      "Engaged in advanced coursework in algorithms, data structures, artificial intelligence, and machine learning.",
+      "Actively participated in academic projects and research, enhancing practical knowledge and problem-solving skills.",
+    ],
+    GPA: "3.19",
+  },
+];

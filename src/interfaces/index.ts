@@ -5,3 +5,11 @@ export interface ISkills {
   categoryIcon: IconType;
   skills: { icon: IconType; name: string }[];
 }
+
+export interface IEducation {
+  date: string;
+  title: string;
+  location: string;
+  description: string[];
+  GPA?: string
+}
