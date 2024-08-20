@@ -17,7 +17,7 @@ const Card = ({
 }: IProps) => {
   return (
     <div className={`w-full group flex ${className}`}>
-      <div className="w-10 h-[6px] bg-black bg-opacity-40 mt-16 relative">
+      <div className="w-5 h-[6px] bg-black bg-opacity-40 mt-16 relative">
         <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex items-center justify-center bg-black bg-opacity-60">
           <span className="w-3 h-3 rounded-full bg-lightBg dark:bg-darkBg inline-flex group-hover:bg-accent duration-300"></span>
         </span>

@@ -140,7 +140,7 @@ export const projectData: IProject[] = [
     image: ecommerce,
     title: "E-commerce App",
     description:
-      "HTML, CSS, JS, Bootstrap, React.js, Formik, Yup, React Query, React Router Dom, JWT Decode, Axios, Use Context and React Slider",
+      "An online store built with HTML, CSS, JS, Bootstrap, and React.js, featuring user authentication, product filtering, shopping cart, order management, and secure payment processing using Formik, Yup, React Query, React Router Dom, JWT Decode, and Axios.",
     repoLink: "https://github.com/HassanAbdelhamed22/E-Commerce",
     liveLink: "https://hassanabdelhamed22.github.io/E-Commerce/",
     category: "React",
@@ -149,7 +149,7 @@ export const projectData: IProject[] = [
     image: fitnessApp,
     title: "Fitness App",
     description:
-      "HTML, CSS, JS, Material UI, React.js, Rapid API, React Router Dom, Axios, Use Context and React Slider",
+      "A fitness platform allowing users to search exercises, track workouts, and calculate BMI using Material UI, React.js, Rapid API, React Router Dom, Axios, and React Slider.",
     repoLink: "https://github.com/HassanAbdelhamed22/Fitness-App",
     liveLink: "https://fitness-app-hassan-abdelhameds-projects.vercel.app/",
     category: "React",
@@ -157,7 +157,8 @@ export const projectData: IProject[] = [
   {
     image: prayerTimings,
     title: "Prayer Timings",
-    description: "HTML, CSS, JS, Material UI, React.js and Moment.js",
+    description:
+      "A prayer time tracking app based on user location, built with Material UI, React.js, and Moment.js for accurate time management.",
     repoLink: "https://github.com/HassanAbdelhamed22/Prayer-Timings",
     liveLink: "https://prayer-timings-eight.vercel.app/",
     category: "React",
@@ -165,7 +166,8 @@ export const projectData: IProject[] = [
   {
     image: productsBuilder,
     title: "Products Builder",
-    description: "HTML, CSS, Typescript, Tailwind CSS and React.js",
+    description:
+      "A dynamic product customization tool using React.js, TypeScript, and Tailwind CSS, allowing users to design and configure products in real-time.",
     repoLink: "https://github.com/HassanAbdelhamed22/Products-Bulider",
     liveLink: "https://products-bulider.vercel.app/",
     category: "React & Typescript",
@@ -173,14 +175,16 @@ export const projectData: IProject[] = [
   {
     image: portfolio,
     title: "Portfolio",
-    description: "HTML, CSS, Typescript, Tailwind CSS and React.js",
+    description:
+      "A personal portfolio showcasing projects and skills, built with TypeScript, Tailwind CSS, and React.js for a responsive and visually appealing design.",
     repoLink: "https://github.com/HassanAbdelhamed22/portfolio",
     category: "React & Typescript",
   },
   {
     image: adminPage,
     title: "User Management",
-    description: "HTML, CSS, Bootstrap, MySql, Ado.net and ASP.net",
+    description:
+      "A user management system with CRUD operations and MySQL integration, built using HTML, CSS, Bootstrap, ADO.NET, and ASP.NET for robust backend functionality.",
     repoLink:
       "https://github.com/HassanAbdelhamed22/User-Management-Systems-using-ASP.NET",
     category: "ASP.net",
@@ -188,7 +192,8 @@ export const projectData: IProject[] = [
   {
     image: forkify,
     title: "Forkify App",
-    description: "JS",
+    description:
+      "A recipe search and management app using vanilla JavaScript, featuring ingredient tracking and dynamic recipe loading.",
     repoLink: "https://github.com/HassanAbdelhamed22/Forkify",
     liveLink: "",
     category: "JS",
@@ -196,7 +201,8 @@ export const projectData: IProject[] = [
   {
     image: mapty,
     title: "Mapty",
-    description: "HTML, CSS and JS",
+    description:
+      "A workout tracking app with geolocation and map integration, built with HTML, CSS, and JavaScript, allowing users to log activities on a map.",
     repoLink: "https://github.com/HassanAbdelhamed22/mapty",
     liveLink: "https://hassanabdelhamed22.github.io/mapty/",
     category: "JS",
@@ -204,7 +210,8 @@ export const projectData: IProject[] = [
   {
     image: bankTransfer,
     title: "Bank Transfer",
-    description: "HTML, CSS and JS",
+    description:
+      "A bank transfer simulation app developed using HTML, CSS, and JavaScript, allowing users to simulate financial transactions and track balances.",
     repoLink: "https://github.com/HassanAbdelhamed22/Bank-Transfer",
     liveLink: "https://hassanabdelhamed22.github.io/Bank-Transfer/",
     category: "JS",
@@ -212,7 +219,8 @@ export const projectData: IProject[] = [
   {
     image: omnifood,
     title: "Omnifood",
-    description: "HTML and CSS",
+    description:
+      "A modern, responsive food delivery landing page, created with HTML and CSS, showcasing a clean design and interactive features.",
     repoLink: "https://github.com/HassanAbdelhamed22/omnifood",
     liveLink: "https://hassanabdelhamed22.github.io/omnifood/",
     category: "HTML & CSS",
@@ -220,7 +228,8 @@ export const projectData: IProject[] = [
   {
     image: todoList,
     title: "ToDo List App",
-    description: "HTML, CSS and JS",
+    description:
+      "A task management app built with HTML, CSS, and JavaScript, enabling users to add, edit, and delete tasks with a simple interface.",
     repoLink: "https://github.com/HassanAbdelhamed22/ToDo-List-App",
     liveLink: "https://hassanabdelhamed22.github.io/ToDo-List-App/",
     category: "JS",
@@ -228,7 +237,8 @@ export const projectData: IProject[] = [
   {
     image: bankist,
     title: "Bankist App",
-    description: "HTML, CSS and JS",
+    description:
+      "A fictional online banking app built with HTML, CSS, and JavaScript, featuring login functionality, balance tracking, and transaction history.",
     repoLink: "https://github.com/HassanAbdelhamed22/Bankist",
     liveLink: "https://hassanabdelhamed22.github.io/Bankist/",
     category: "JS",
@@ -236,7 +246,8 @@ export const projectData: IProject[] = [
   {
     image: startReact,
     title: "Start React App",
-    description: "HTML, CSS, React.js React Router DOM",
+    description:
+      "A beginner's React project featuring a multipage layout with routing, built using HTML, CSS, and React.js.",
     repoLink: "https://github.com/HassanAbdelhamed22/reactTest",
     liveLink: "https://hassanabdelhamed22.github.io/reactTest/",
     category: "React",
@@ -244,7 +255,8 @@ export const projectData: IProject[] = [
   {
     image: crud,
     title: "CRUD App",
-    description: "HTML, CSS and JS",
+    description:
+      "A basic CRUD application with Create, Read, Update, and Delete functionality, developed using HTML, CSS, and JavaScript.",
     repoLink: "https://github.com/HassanAbdelhamed22/CRUD-js",
     liveLink: "https://hassanabdelhamed22.github.io/CRUD-js/",
     category: "JS",
@@ -252,7 +264,8 @@ export const projectData: IProject[] = [
   {
     image: dashboard,
     title: "Dashboard",
-    description: "HTML, CSS",
+    description:
+      "A responsive admin dashboard layout built with HTML and CSS, designed for data visualization and management.",
     repoLink: "https://github.com/HassanAbdelhamed22/Dashboard",
     liveLink: "https://hassanabdelhamed22.github.io/Dashboard/",
     category: "HTML & CSS",
@@ -260,7 +273,8 @@ export const projectData: IProject[] = [
   {
     image: landingPage,
     title: "Landing Page",
-    description: "HTML, CSS",
+    description:
+      "A clean and modern landing page built with HTML and CSS, designed to be fully responsive and mobile-friendly.",
     repoLink: "https://github.com/HassanAbdelhamed22/LandingPage",
     liveLink: "https://hassanabdelhamed22.github.io/LandingPage/",
     category: "HTML & CSS",
@@ -268,7 +282,8 @@ export const projectData: IProject[] = [
   {
     image: guessMyNumber,
     title: "Guess My Number",
-    description: "HTML, CSS and JS",
+    description:
+      "A fun number guessing game built with HTML, CSS, and JavaScript, featuring interactive gameplay and score tracking.",
     repoLink: "https://github.com/HassanAbdelhamed22/Guess-My-Number",
     liveLink: "https://hassanabdelhamed22.github.io/Guess-My-Number/",
     category: "JS",
@@ -276,7 +291,8 @@ export const projectData: IProject[] = [
   {
     image: pigGame,
     title: "Pig Game",
-    description: "HTML, CSS and JS",
+    description:
+      "A two-player dice game created with HTML, CSS, and JavaScript, featuring turn-based gameplay and dynamic scorekeeping.",
     repoLink: "https://github.com/HassanAbdelhamed22/Pig-Game",
     liveLink: "https://hassanabdelhamed22.github.io/Pig-Game/",
     category: "JS",
@@ -284,7 +300,8 @@ export const projectData: IProject[] = [
   {
     image: uiUtopia,
     title: "UI Utopia",
-    description: "HTML, CSS",
+    description:
+      "A collection of reusable UI components and layouts designed with HTML and CSS, suitable for various web projects.",
     repoLink: "https://github.com/HassanAbdelhamed22/Ui_Utopia",
     liveLink: "https://hassanabdelhamed22.github.io/Ui_Utopia/",
     category: "HTML & CSS",
@@ -292,7 +309,8 @@ export const projectData: IProject[] = [
   {
     image: huddle,
     title: "Huddle Home Page",
-    description: "HTML, CSS",
+    description:
+      "A responsive homepage for a fictional company, built with HTML and CSS, showcasing a clean and professional design.",
     repoLink: "https://github.com/HassanAbdelhamed22/Huddle-Home-Page",
     liveLink: "https://hassanabdelhamed22.github.io/Huddle-Home-Page/",
     category: "HTML & CSS",
@@ -300,7 +318,8 @@ export const projectData: IProject[] = [
   {
     image: furniture,
     title: "Furniture Home Page",
-    description: "HTML, CSS",
+    description:
+      "A modern landing page for a furniture store, designed with HTML and CSS to be fully responsive and visually appealing.",
     repoLink: "https://github.com/HassanAbdelhamed22/Furniture-Home-page",
     liveLink: "https://hassanabdelhamed22.github.io/Furniture-Home-Page/",
     category: "HTML & CSS",

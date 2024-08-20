@@ -19,7 +19,7 @@ const Hero = ({}: IProps) => {
   });
 
   return (
-    <section id="home">
+    <section id="home" className="py-10 px-0 sm:px-4">
       <div className="flex items-center justify-between mt-12">
         <div className="left-section relative xl:mr-16 flex-1">
           <div className="flex items-end gap-2">
@@ -27,6 +27,7 @@ const Hero = ({}: IProps) => {
               src={img}
               alt="Profile"
               className="w-20 h-20 object-cover bg-zinc-100 dark:bg-zinc-800 rounded-full border-2 border-orange-200 dark:border-orange-200 p-[1px]"
+              loading="lazy"
             />
             <MdVerified className="flex items-end text-accent text-[1.1rem] mb-1" />
           </div>
@@ -41,7 +42,7 @@ const Hero = ({}: IProps) => {
                 <Cursor cursorStyle="|" /> {/* Adjust cursor position */}
               </span>
             </h1>
-            <p className="text-base text-secondaryLightText dark:text-secondaryDarkText mt-6">
+            <p className="text-base text-secondaryLightText dark:text-secondaryDarkText mt-6 max-w-64 sm:max-w-full">
               I’m Hassan Abdelhamed, a software engineer and frontend developer
               with a passion for creating dynamic and intuitive web experiences.
               Specializing in React.js, I leverage my skills in JavaScript,
@@ -50,14 +51,14 @@ const Hero = ({}: IProps) => {
               efficient code.
             </p>
           </div>
-          <div className="flex mt-6 gap-6 items-center">
+          <div className="flex mt-6 gap-3 sm:gap-6 items-center">
             <a
               href="https://github.com/HassanAbdelhamed22"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
             >
-              <FaGithub className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <FaGithub className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
             </a>
             <a
               href="https://linkedin.com/in/hassanabdelhamedh22/"
@@ -65,7 +66,7 @@ const Hero = ({}: IProps) => {
               rel="noopener noreferrer"
               className="group"
             >
-              <FaLinkedin className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <FaLinkedin className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
             </a>
             <a
               href="https://www.instagram.com/hassan_abdelhamed1/"
@@ -73,7 +74,7 @@ const Hero = ({}: IProps) => {
               rel="noopener noreferrer"
               className="group"
             >
-              <FaInstagram className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <FaInstagram className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=201012854740"
@@ -81,7 +82,7 @@ const Hero = ({}: IProps) => {
               rel="noopener noreferrer"
               className="group"
             >
-              <FaWhatsapp className="h-6 w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <FaWhatsapp className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
             </a>
 
             <a
@@ -90,7 +91,7 @@ const Hero = ({}: IProps) => {
               rel="noopener noreferrer"
             >
               <button
-                className="bg-inherit border border-accent text-lightText dark:text-darkText px-4 py-2 rounded-lg  text-sm
+                className="bg-inherit border border-accent text-lightText dark:text-darkText px-4 py-2 rounded-lg  text-[13px] sm:text-sm
              hover:bg-accent
              hover:text-white hover:border-transparent transform hover:shadow-lg transition duration-300"
               >

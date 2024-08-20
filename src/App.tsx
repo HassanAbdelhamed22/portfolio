@@ -10,7 +10,7 @@ import Education from "./components/education/Education";
 
 function App() {
   return (
-    <div className="container bg-lightBg border-[1px] border-borderLight dark:bg-darkBg dark:border-borderDark w-[85%] dark:text-darkText px-3 md:px-16 max-w-screen-2xl h-auto">
+    <div className="container bg-lightBg border-[1px] border-borderLight dark:bg-darkBg dark:border-borderDark w-[85%] dark:text-darkText px-8 md:px-16 max-w-screen-2xl h-auto">
       <Header />
       <Hero />
       <Divider />
