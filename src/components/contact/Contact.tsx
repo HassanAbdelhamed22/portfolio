@@ -20,7 +20,7 @@ const Contact = ({}: IProps) => {
       </p>
 
       <div className="flex items-center justify-between">
-        <form action="" className="ml-auto mr-auto sm:ml-0 sm:mr-0 w-full">
+        <form action="" className="ml-auto mr-auto md:ml-0 md:mr-0">
           <div className="flex items-start gap-2 mt-6 lg:mt-0 flex-col sm:flex-row sm:items-center">
             <label
               htmlFor="email"
@@ -33,7 +33,7 @@ const Contact = ({}: IProps) => {
               id="email"
               required
               placeholder="Email Address"
-              className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-60 sm:w-[22rem] py-2 px-2 rounded-md focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] transition duration-200 hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf]"
+              className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-64 sm:w-[22rem] py-2 px-2 rounded-md focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] transition duration-200 hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf]"
             />
           </div>
           <div className="flex items-start gap-2 mt-6 flex-col sm:flex-row sm:items-center">
@@ -47,7 +47,8 @@ const Contact = ({}: IProps) => {
               id="message"
               required
               placeholder="Message"
-              className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-60 sm:w-[22rem] py-2 px-2 rounded-md min-h-28 max-h-48 resize-y focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf] transition duration-200"
+              className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-64
+               sm:w-[22rem] py-2 px-2 rounded-md min-h-28 max-h-48 resize-y focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf] transition duration-200"
             />
           </div>
           <div className="text-center sm:text-start">
