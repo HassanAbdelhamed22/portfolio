@@ -7,6 +7,7 @@ import Divider from "./components/ui/Divider";
 
 import Skills from "./components/skills/Skills";
 import Education from "./components/education/Education";
+import ToTopButton from "./components/ui/ToTopButton";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Contact />
       <Divider />
       <Footer />
+      <ToTopButton />
     </div>
   );
 }
