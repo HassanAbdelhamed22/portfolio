@@ -1,10 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import emailjs from "@emailjs/browser";
 import contactAnimation from "../../assets/contact.json";
 import doneAnimation from "../../assets/done.json";
 import { Oval } from "react-loader-spinner";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface IProps {}
 
@@ -13,6 +15,10 @@ const Contact = ({}: IProps) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  // Animation controls
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,8 +49,32 @@ const Contact = ({}: IProps) => {
     }
   };
 
+  // Trigger animation when in view
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  // Animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section id="contact" className="py-10 px-0 sm:px-4">
+    <motion.section
+      id="contact"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={sectionVariants}
+      className="py-10 px-0 sm:px-4"
+    >
       <h1 className="flex items-center gap-2 text-3xl sm:text-4xl text-lightText dark:text-darkText mb-4">
         <MdEmail className="h-8 w-8 sm:h-10 sm:w-10 fill-secondaryLightText transition-all duration-300 hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300" />
         Contact Me
@@ -93,7 +123,7 @@ const Contact = ({}: IProps) => {
               autoComplete="off"
               disabled={isLoading}
               className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-64
-                 sm:w-[22rem] py-2 px-2 rounded-md min-h-28 max-h-48 resize-y focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf] transition duration-200"
+                sm:w-[22rem] py-2 px-2 rounded-md min-h-28 max-h-48 resize-y focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf] transition duration-200"
             />
           </div>
           <div className="text-center sm:text-start">
@@ -109,8 +139,6 @@ const Contact = ({}: IProps) => {
                   width="24"
                   color="#4A90E2"
                   ariaLabel="oval-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
                 />
               ) : (
                 "Submit"
@@ -134,7 +162,15 @@ const Contact = ({}: IProps) => {
           </div>
         </form>
 
-        <div className="hidden lg:block">
+        <motion.div
+          className="hidden lg:block"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: { duration: 1, ease: "easeOut" },
+          }}
+        >
           <Lottie
             lottieRef={lottieRef}
             onLoadedImages={() => {
@@ -145,9 +181,9 @@ const Contact = ({}: IProps) => {
             animationData={contactAnimation}
             className="w-[20rem] h-[20rem] xl:w-[24rem] xl:h-[24rem] translate-y-[-20px]"
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

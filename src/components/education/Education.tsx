@@ -3,13 +3,26 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import educationAnimation from "../../assets/education.json";
 import { useRef } from "react";
 import Card from "./Card";
+import { motion } from "framer-motion";
 
 const Education = () => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 
+  // Define animation variants
+  const containerVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section id="education" className="py-10 px-0 sm:px-4">
-      <div className="flex flex-col md:flex-row items-center justify-center md:space-x-6">
+      <motion.div
+        className="flex flex-col md:flex-row items-center justify-center md:space-x-6"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      >
         <div className="flex items-center justify-center mb-6 md:mb-0">
           <Lottie
             lottieRef={lottieRef}
@@ -30,7 +43,7 @@ const Education = () => {
             My journey with CS
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="mt-10 flex flex-col lg:flex-row gap-10">
         <div className="flex-1">

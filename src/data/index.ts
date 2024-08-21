@@ -25,6 +25,7 @@ import {
   SiMysql,
   SiDotnet,
   SiCplusplus,
+  SiFramer,
 } from "react-icons/si";
 import { IEducation, IProject, ISkills } from "../interfaces";
 import {
@@ -64,6 +65,7 @@ const skillsList: ISkills[] = [
       { icon: SiTailwindcss, name: "Tailwind CSS" },
       { icon: SiBootstrap, name: "Bootstrap" },
       { icon: FaSass, name: "SASS" },
+      { icon: SiFramer, name: "Framer Motion" },
     ],
   },
   {
