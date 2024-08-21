@@ -170,7 +170,7 @@ export const projectData: IProject[] = [
       "A dynamic product customization tool using React.js, TypeScript, and Tailwind CSS, allowing users to design and configure products in real-time.",
     repoLink: "https://github.com/HassanAbdelhamed22/Products-Bulider",
     liveLink: "https://products-bulider.vercel.app/",
-    category: "React & Typescript",
+    category: "React & TS",
   },
   {
     image: portfolio,
@@ -178,7 +178,7 @@ export const projectData: IProject[] = [
     description:
       "A personal portfolio showcasing projects and skills, built with TypeScript, Tailwind CSS, and React.js for a responsive and visually appealing design.",
     repoLink: "https://github.com/HassanAbdelhamed22/portfolio",
-    category: "React & Typescript",
+    category: "React & TS",
   },
   {
     image: adminPage,
