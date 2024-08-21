@@ -29,9 +29,9 @@ const DarkMode = ({ className = "" }: IProps) => {
       onClick={() => setDarkMode(!darkMode)}
       aria-label="Toggle Dark Mode"
       aria-pressed={darkMode}
-      className={`text-xl text-gray-800 dark:text-gray-200 bg-[#fafafa] dark:bg-[#252529] p-[0.7rem] rounded-3xl shadow-md hover:bg-gray-200 dark:hover:bg-[#1f1f22] transition-colors duration-300 ml-auto sm:ml-0 border dark:border-borderDark border-borderLight ${className}`}
+      className={`text-xl p-2 rounded-full shadow-md transition-colors duration-300 ml-auto sm:ml-0 border ${darkMode ? 'bg-[#252529] text-gray-200 dark:border-borderDark hover:bg-[#1f1f22]' : 'bg-[#fafafa] text-gray-800 border-borderLight hover:bg-gray-200'} ${className}`}
     >
-      {darkMode ? <FaSun /> : <FaMoon />}
+      {darkMode ? <FaSun className="transition-transform duration-300 ease-in-out w-5 h-5" /> : <FaMoon className="transition-transform duration-300 ease-in-out w-5 h-5" />}
     </button>
   );
 };

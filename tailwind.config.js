@@ -5,19 +5,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        lightBg: "#fafafa",
-        darkBg: "#252529",
+        lightBg: "#f4f4f4",
+        darkBg: "#2c2c2c",
         lightText: "#27272a",
         darkText: "#f4f4f5",
-        secondaryLightText: "#52525b",
-        secondaryDarkText: "#A1A1AA",
-        borderLight: "#e4e4e7",
-        borderDark: "#4b4b52",
-        accent: "#5DBCFC",
-        // accent: "#6EC8FF",
+        secondaryLightText: "#6e6e76",
+        secondaryDarkText: "#8e8e95",
+        borderLight: "#d1d1d6",
+        borderDark: "#3a3a42",
+        accent: "#4A90E2",
         hoverBg: "#1f1f22",
         hoverText: "#ffffff",
-        subtitle: "rgb(131, 131, 140)",
+        subtitle: "#83838c",
       },
       keyframes: {
         customScale: {

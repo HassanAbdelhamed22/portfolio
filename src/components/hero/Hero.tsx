@@ -109,7 +109,7 @@ const Hero = ({}: IProps) => {
               }
             }}
             animationData={devAnimation}
-            className="w-full h-auto"
+            className="w-full translate-x-24 translate-y-14"
           />
         </div>
       </div>

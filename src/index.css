@@ -54,13 +54,12 @@ html.dark {
   background: #555;
 }
 
-
 .project-btn {
   @apply w-28 sm:w-44 py-3 px-0 text-center text-sm bg-[#e1e1e128] dark:bg-[#1a1a1d99] text-lightText dark:text-darkText rounded-md shadow-sm dark:opacity-50 opacity-75 hover:opacity-100 hover:dark:opacity-100 transition duration-300;
 }
 
 .project-btn.active {
-  @apply border border-accent font-bold tracking-wider opacity-100 transition duration-300;
+  @apply border border-accent font-bold tracking-wider opacity-100 transition duration-300 bg-[#1a1a1dcf] text-darkText;
 }
 
 .gradient {

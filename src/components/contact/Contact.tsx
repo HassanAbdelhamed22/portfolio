@@ -1,12 +1,47 @@
+import { useRef, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import emailjs from "@emailjs/browser";
 import contactAnimation from "../../assets/contact.json";
-import { useRef } from "react";
+import doneAnimation from "../../assets/done.json";
+import { Oval } from "react-loader-spinner";
 
 interface IProps {}
 
 const Contact = ({}: IProps) => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (formRef.current) {
+      setIsLoading(true);
+      emailjs
+        .sendForm("service_3q0yekc", "template_rww48vy", formRef.current, {
+          publicKey: "ISWV3_Uv6U-TfAmUb",
+        })
+        .then(
+          () => {
+            setIsSuccess(true);
+            setIsLoading(false);
+            // Clear the form fields
+            formRef.current?.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => setIsSuccess(false), 5000);
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+            setIsLoading(false);
+          }
+        );
+    } else {
+      console.log("Form reference is null");
+    }
+  };
 
   return (
     <section id="contact" className="py-10 px-0 sm:px-4">
@@ -15,12 +50,16 @@ const Contact = ({}: IProps) => {
         Contact Me
       </h1>
       <p className="text-secondaryLightText dark:text-secondaryDarkText mb-8 text-base">
-        Contact me for more information and Get notified when I publish
-        something new
+        Contact me for more information and get notified when I publish
+        something new.
       </p>
 
       <div className="flex items-center justify-between">
-        <form action="" className="ml-auto mr-auto md:ml-0 md:mr-0">
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+          className="ml-auto mr-auto md:ml-0 md:mr-0"
+        >
           <div className="flex items-start gap-2 mt-6 lg:mt-0 flex-col sm:flex-row sm:items-center">
             <label
               htmlFor="email"
@@ -31,8 +70,11 @@ const Contact = ({}: IProps) => {
             <input
               type="email"
               id="email"
+              name="from_name"
               required
               placeholder="Email Address"
+              autoComplete="off"
+              disabled={isLoading}
               className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-64 sm:w-[22rem] py-2 px-2 rounded-md focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] transition duration-200 hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf]"
             />
           </div>
@@ -45,18 +87,53 @@ const Contact = ({}: IProps) => {
             </label>
             <textarea
               id="message"
+              name="message"
               required
               placeholder="Message"
+              autoComplete="off"
+              disabled={isLoading}
               className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-64
-               sm:w-[22rem] py-2 px-2 rounded-md min-h-28 max-h-48 resize-y focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf] transition duration-200"
+                 sm:w-[22rem] py-2 px-2 rounded-md min-h-28 max-h-48 resize-y focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf] transition duration-200"
             />
           </div>
           <div className="text-center sm:text-start">
-            <button className="project-btn mt-7  !w-28 border border-borderLight dark:border-borderDark hover:scale-90 ">
-              Submit
+            <button
+              className="project-btn mt-7 !w-28 border border-borderLight dark:border-borderDark hover:scale-90 flex items-center justify-center"
+              type="submit"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <Oval
+                  visible={true}
+                  height="24"
+                  width="24"
+                  color="#4A90E2"
+                  ariaLabel="oval-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              ) : (
+                "Submit"
+              )}
             </button>
-          </div>{" "}
+            {isSuccess && (
+              <div className="text-green-500 mt-4 flex items-center">
+                <Lottie
+                  lottieRef={lottieRef}
+                  onLoadedImages={() => {
+                    if (lottieRef.current) {
+                      lottieRef.current.setSpeed(0.5);
+                    }
+                  }}
+                  animationData={doneAnimation}
+                  className="h-12"
+                />
+                Your message has been sent successfully!
+              </div>
+            )}
+          </div>
         </form>
+
         <div className="hidden lg:block">
           <Lottie
             lottieRef={lottieRef}
@@ -66,7 +143,7 @@ const Contact = ({}: IProps) => {
               }
             }}
             animationData={contactAnimation}
-            className="w-[20rem] h-[20rem] xl:w-[28rem] xl:h-[28rem] "
+            className="w-[20rem] h-[20rem] xl:w-[24rem] xl:h-[24rem] translate-y-[-20px]"
           />
         </div>
       </div>
