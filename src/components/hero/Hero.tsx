@@ -1,6 +1,6 @@
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdVerified } from "react-icons/md";
-import img from "../../assets/me.png";
+import img from "../../assets/me.webp";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import devAnimation from "../../assets/dev.json";
 import { useRef } from "react";

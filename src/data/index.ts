@@ -50,7 +50,7 @@ import {
   prayerTimings,
   productsBuilder,
   startReact,
-} from "../assets/projectsImg";
+} from "../assets/product Img";
 
 const skillsList: ISkills[] = [
   {
@@ -249,7 +249,7 @@ export const projectData: IProject[] = [
     image: startReact,
     title: "Start React App",
     description:
-      "A beginner's React project featuring a multipage layout with routing, built using HTML, CSS, and React.js.",
+      "A beginner's React project featuring a multi-page layout with routing, built using HTML, CSS, and React.js.",
     repoLink: "https://github.com/HassanAbdelhamed22/reactTest",
     liveLink: "https://hassanabdelhamed22.github.io/reactTest/",
     category: "React",
@@ -285,7 +285,7 @@ export const projectData: IProject[] = [
     image: guessMyNumber,
     title: "Guess My Number",
     description:
-      "A fun number guessing game built with HTML, CSS, and JavaScript, featuring interactive gameplay and score tracking.",
+      "A fun number guessing game built with HTML, CSS, and JavaScript, featuring interactive game play and score tracking.",
     repoLink: "https://github.com/HassanAbdelhamed22/Guess-My-Number",
     liveLink: "https://hassanabdelhamed22.github.io/Guess-My-Number/",
     category: "JS",
@@ -294,7 +294,7 @@ export const projectData: IProject[] = [
     image: pigGame,
     title: "Pig Game",
     description:
-      "A two-player dice game created with HTML, CSS, and JavaScript, featuring turn-based gameplay and dynamic scorekeeping.",
+      "A two-player dice game created with HTML, CSS, and JavaScript, featuring turn-based game play and dynamic score keeping.",
     repoLink: "https://github.com/HassanAbdelhamed22/Pig-Game",
     liveLink: "https://hassanabdelhamed22.github.io/Pig-Game/",
     category: "JS",
