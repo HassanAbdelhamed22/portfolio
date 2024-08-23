@@ -1,11 +1,26 @@
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { MdVerified } from "react-icons/md";
-import img from "../../assets/me.webp";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import devAnimation from "../../assets/dev.json";
-import { useRef } from "react";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+import React, { Suspense, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import img from "../../assets/me.webp";
+import devAnimation from "../../assets/dev.json";
+
+// Lazy load all icons
+const FaGithub = React.lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaGithub }))
+);
+const FaLinkedin = React.lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaLinkedin }))
+);
+const FaInstagram = React.lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaInstagram }))
+);
+const FaWhatsapp = React.lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaWhatsapp }))
+);
+const MdVerified = React.lazy(() =>
+  import("react-icons/md").then((module) => ({ default: module.MdVerified }))
+);
 
 const Hero = () => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
@@ -25,14 +40,14 @@ const Hero = () => {
         type: "spring",
         stiffness: 200,
         damping: 20,
-        duration: 0.8,
+        duration: 1,
       },
     },
   };
 
   const textVariant = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 1.2 } },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 1.3 } },
   };
 
   const iconVariant = {
@@ -40,13 +55,19 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { delay: 0.8, duration: 1, staggerChildren: 0.2 },
+      transition: { delay: 0.8, duration: 1.2, staggerChildren: 0.2 },
     },
   };
 
   const buttonVariant = {
     hover: { scale: 1.05, transition: { duration: 0.3 } },
   };
+
+  useEffect(() => {
+    if (lottieRef.current) {
+      lottieRef.current.play(); // Play the animation after it's loaded
+    }
+  }, []);
 
   return (
     <section id="home" className="py-10 px-0 sm:px-4">
@@ -60,10 +81,15 @@ const Hero = () => {
             <motion.img
               src={img}
               alt="Profile"
-              className="w-20 h-20 object-cover bg-zinc-100 dark:bg-zinc-800 rounded-full border-2 border-orange-200 dark:border-orange-200 p-[1px]"
+              className="w-36 h-36 object-cover bg-zinc-100 dark:bg-zinc-800 rounded-full border-2 border-orange-200 dark:border-orange-200 p-[1px]"
               loading="lazy"
             />
-            <MdVerified className="flex items-end text-accent text-[1.1rem] mb-1" />
+            <Suspense>
+              <MdVerified
+                className="flex items-end text-lightAccent dark:text-darkAccent text-[1.5rem] mb-1"
+                aria-label="Verified"
+              />
+            </Suspense>
           </motion.div>
 
           <motion.div
@@ -71,7 +97,7 @@ const Hero = () => {
             variants={textVariant}
           >
             <motion.h1
-              className="text-lightText dark:text-darkText text-4xl font-bold sm:text-5xl mt-8 flex flex-col gap-2"
+              className="text-lightText dark:text-darkText text-[28px] font-bold sm:text-5xl mt-8 flex flex-col gap-2"
               variants={textVariant}
             >
               <span className="text-2xl text-secondaryLightText dark:text-secondaryDarkText">
@@ -83,7 +109,7 @@ const Hero = () => {
               </span>
             </motion.h1>
             <motion.p
-              className="text-base text-secondaryLightText dark:text-secondaryDarkText mt-6 max-w-64 sm:max-w-full"
+              className="text-base text-secondaryLightText dark:text-secondaryDarkText mt-6  sm:max-w-full"
               variants={textVariant}
             >
               I’m Hassan Abdelhamed, a software engineer and frontend developer
@@ -103,43 +129,56 @@ const Hero = () => {
               href="https://github.com/HassanAbdelhamed22"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Hassan Abdelhamed's GitHub"
               className="group"
             >
-              <FaGithub className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <Suspense>
+                <FaGithub className="h-5 w-5 sm:h-7 sm:w-7 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              </Suspense>
             </motion.a>
             <motion.a
               href="https://linkedin.com/in/hassanabdelhamedh22/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Hassan Abdelhamed's LinkedIn"
               className="group"
             >
-              <FaLinkedin className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <Suspense>
+                <FaLinkedin className="h-5 w-5 sm:h-7 sm:w-7 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              </Suspense>
             </motion.a>
             <motion.a
               href="https://www.instagram.com/hassan_abdelhamed1/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Hassan Abdelhamed's Instagram"
               className="group"
             >
-              <FaInstagram className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <Suspense>
+                <FaInstagram className="h-5 w-5 sm:h-7 sm:w-7 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              </Suspense>
             </motion.a>
             <motion.a
               href="https://api.whatsapp.com/send?phone=201012854740"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Hassan Abdelhamed's WhatsApp"
               className="group"
             >
-              <FaWhatsapp className="h-5 w-5 sm:h-6 sm:w-6 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <Suspense>
+                <FaWhatsapp className="h-5 w-5 sm:h-7 sm:w-7 fill-secondaryLightText transition-all duration-300 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              </Suspense>
             </motion.a>
 
             <motion.a
               href="https://drive.google.com/file/d/1pAQa5KwTOwJ60K7W0m2sD9ZZ1H2PwxpR/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Download CV"
               whileHover="hover"
               variants={buttonVariant}
             >
-              <button className="bg-inherit border border-accent text-lightText dark:text-darkText px-4 py-2 rounded-lg text-[13px] sm:text-sm hover:bg-accent hover:text-white hover:border-transparent transform hover:shadow-lg transition duration-300">
+              <button className="bg-inherit border border-lightAccent dark:border-darkAccent text-lightText dark:text-darkText px-4 py-2 sm:px-6 sm:py-3 rounded-lg text-[13px] sm:text-sm hover:bg-lightAccent dark:hover:bg-darkAccent hover:text-white dark:hover:text-black hover:border-transparent transform hover:shadow-lg transition duration-300">
                 Download CV
               </button>
             </motion.a>
@@ -154,7 +193,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 100,
             damping: 20,
-            duration: 0.8,
+            duration: 1,
           }}
         >
           <Lottie

@@ -54,9 +54,9 @@ export default function Header() {
                           onClick={() => handleLinkClick(item.href)}
                           className={classNames(
                             activeLink === item.href
-                              ? "text-accent dark:text-accent"
+                              ? "text-lightAccent dark:text-darkAccent"
                               : "text-lightText dark:text-darkText opacity-[0.9]",
-                            "text-sm font-semibold hover:text-accent dark:hover:text-accent hover:opacity-[1] transition duration-300 delay-75",
+                            "text-base font-semibold hover:text-lightAccent dark:hover:text-darkAccent hover:opacity-[1] transition duration-300 delay-75",
                             "rounded-md px-3 py-2"
                           )}
                           aria-current={
@@ -96,9 +96,9 @@ export default function Header() {
                     onClick={() => handleLinkClick(item.href)}
                     className={classNames(
                       activeLink === item.href
-                        ? "text-accent dark:text-accent"
+                        ? "text-lightAccent dark:text-darkAccent"
                         : "text-lightText dark:text-darkText opacity-[0.9]",
-                      "text-base font-semibold hover:text-accent hover:dark:text-accent hover:opacity-[1] transition duration-300",
+                      "text-base font-semibold hover:text-lightAccent hover:dark:text-darkAccent hover:opacity-[1] transition duration-300",
                       "block py-2 border-b-[1px] w-full border-solid border-borderLight dark:border-borderDark last:border-none"
                     )}
                     aria-current={activeLink === item.href ? "page" : undefined}

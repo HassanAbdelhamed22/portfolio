@@ -1,32 +1,84 @@
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaPython,
-  FaJava,
-  FaGitAlt,
-  FaDocker,
-  FaSass,
-  FaPhp,
-  FaCode,
-  FaTools,
-  FaDatabase,
-  FaLaptopCode,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiCsharp,
-  SiTailwindcss,
-  SiBootstrap,
-  SiPostman,
-  SiVercel,
-  SiVisualstudiocode,
-  SiMysql,
-  SiDotnet,
-  SiCplusplus,
-  SiFramer,
-} from "react-icons/si";
+import React, { lazy } from "react";
+
+const FaHtml5 = React.lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaHtml5 }))
+);
+const FaCss3Alt = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaCss3Alt }))
+);
+const FaJsSquare = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaJsSquare }))
+);
+const FaReact = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaReact }))
+);
+const FaPython = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaPython }))
+);
+const FaJava = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaJava }))
+);
+const FaGitAlt = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaGitAlt }))
+);
+const FaDocker = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaDocker }))
+);
+const FaSass = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaSass }))
+);
+const FaPhp = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaPhp }))
+);
+const FaCode = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaCode }))
+);
+const FaTools = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaTools }))
+);
+const FaDatabase = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaDatabase }))
+);
+const FaLaptopCode = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaLaptopCode }))
+);
+
+const SiTypescript = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiTypescript }))
+);
+const SiCsharp = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiCsharp }))
+);
+const SiTailwindcss = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiTailwindcss }))
+);
+const SiBootstrap = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiBootstrap }))
+);
+const SiPostman = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiPostman }))
+);
+const SiVercel = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiVercel }))
+);
+const SiVisualstudiocode = lazy(() =>
+  import("react-icons/si").then((module) => ({
+    default: module.SiVisualstudiocode,
+  }))
+);
+const SiMysql = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiMysql }))
+);
+const SiDotnet = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiDotnet }))
+);
+const SiCplusplus = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiCplusplus }))
+);
+const SiFramer = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiFramer }))
+);
+
 import { IEducation, IProject, ISkills } from "../interfaces";
 import {
   adminPage,
@@ -50,7 +102,7 @@ import {
   prayerTimings,
   productsBuilder,
   startReact,
-} from "../assets/product Img";
+} from "../assets/product Img/index";
 
 const skillsList: ISkills[] = [
   {

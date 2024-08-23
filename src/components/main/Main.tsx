@@ -4,8 +4,7 @@ import { FaLink, FaGithub, FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Main = () => {
-  const [selectedCategory, setSelectedCategory] =
-    useState<string>("All Projects");
+  const [selectedCategory, setSelectedCategory] = useState("All Projects");
 
   const filteredProjects = projectData.filter((item) =>
     selectedCategory === "All Projects"
@@ -23,17 +22,9 @@ const Main = () => {
   ];
 
   const cardVariants = {
-    hidden: { opacity: 0, transform: "scale(0.95)" },
-    visible: {
-      opacity: 1,
-      transform: "scale(1)",
-      transition: { duration: 0.4 },
-    },
-    exit: {
-      opacity: 0,
-      transform: "scale(0.95)",
-      transition: { duration: 0.4 },
-    },
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+    exit: { opacity: 0, scale: 0.95, transition: { duration: 0.4 } },
   };
 
   return (
@@ -60,24 +51,27 @@ const Main = () => {
             {filteredProjects.map((item) => (
               <motion.div
                 key={item.title}
-                className="border border-borderLight dark:border-borderDark rounded-md hover:border-accent dark:hover:border-accent transition duration-300 hover:rotate-1 hover:scale-100 hover:cursor-pointer gradient"
+                className="border border-borderLight dark:border-borderDark rounded-md hover:border-lightAccent dark:hover:border-darkAccent gradient hover:cursor-pointer"
                 variants={cardVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
+                whileHover={{ scale: 1.03, rotate: 1.1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  height={140}
-                  className="overflow-hidden rounded-md"
-                />
+                <div className="relative overflow-hidden rounded-md">
+                  <img
+                    src={item.image}
+                    alt={`Screenshot of ${item.title} project`}
+                    loading="lazy"
+                    className="w-full object-cover"
+                  />
+                </div>
                 <div className="py-4 px-2">
                   <h1 className="text-lightText dark:text-darkText">
                     {item.title}
                   </h1>
-                  <p className="text-secondaryLightText dark:text-secondaryDarkText text-sm mt-3 mb-5">
+                  <p className="text-secondaryLightText dark:text-secondaryDarkText text-sm mt-3 mb-5 min-h-[140px]">
                     {item.description}
                   </p>
                   <div className="flex items-center justify-between">
@@ -87,7 +81,7 @@ const Main = () => {
                           href={item.liveLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group"
+                          aria-label={`View live version of ${item.title} project`}
                         >
                           <FaLink className="h-5 w-5 fill-secondaryLightText transition-all duration-300 hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300 cursor-pointer" />
                         </a>
@@ -96,13 +90,17 @@ const Main = () => {
                         href={item.repoLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group"
+                        aria-label={`View repository of ${item.title} project`}
                       >
                         <FaGithub className="h-5 w-5 fill-secondaryLightText transition-all duration-300 hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300 cursor-pointer" />
                       </a>
                     </div>
-                    <a href="" className="flex gap-2 items-center text-accent">
-                      <span className="text-sm">more</span>{" "}
+                    <a
+                      href="#"
+                      aria-label={`Learn more about ${item.title} project`}
+                      className="flex gap-2 items-center text-lightAccent dark:text-darkAccent"
+                    >
+                      <span className="text-sm">More details</span>
                       <FaArrowRight className="items-end" />
                     </a>
                   </div>

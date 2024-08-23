@@ -2,12 +2,56 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src/assets/me.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hassan's portfolio showcasing front-end development skills and projects. Explore work on web development, UI/UX design, and more."
+    />
+    <link rel="icon" type="image/svg+xml" href="src/assets/me.webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="src/assets/contact.json"
+      as="fetch"
+      type="application/json"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="src/assets/dev.json"
+      as="fetch"
+      type="application/json"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="src/assets/done.json"
+      as="fetch"
+      type="application/json"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="src/assets/education.json"
+      as="fetch"
+      type="application/json"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="src/assets/skill.json"
+      as="fetch"
+      type="application/json"
+      crossorigin="anonymous"
+    />
+
     <title>Hassan Portfolio</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer async></script>
   </body>
 </html>

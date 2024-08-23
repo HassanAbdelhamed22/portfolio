@@ -35,11 +35,11 @@ const Card = ({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={variants}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
+      transition={{ duration: 1.2, ease: "easeInOut" }}
     >
       <div className="w-5 h-[6px] bg-black bg-opacity-40 mt-16 relative">
         <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex items-center justify-center bg-black bg-opacity-60">
-          <span className="w-3 h-3 rounded-full bg-lightBg dark:bg-darkBg inline-flex group-hover:bg-accent duration-300"></span>
+          <span className="w-3 h-3 rounded-full bg-lightBg dark:bg-darkBg inline-flex group-hover:bg-lightAccent dark:group-hover:bg-darkAccent duration-300"></span>
         </span>
       </div>
       <div className="w-full bg-[#e1e1e128] dark:bg-[#1a1a1d99] transition-transform duration-500 transform hover:scale-105 rounded-lg px-5 sm:px-10 flex flex-col justify-center gap-10 shadow-md">

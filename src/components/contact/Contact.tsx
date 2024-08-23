@@ -3,7 +3,6 @@ import { MdEmail } from "react-icons/md";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import emailjs from "@emailjs/browser";
 import contactAnimation from "../../assets/contact.json";
-import doneAnimation from "../../assets/done.json";
 import { Oval } from "react-loader-spinner";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -62,9 +61,15 @@ const Contact = ({}: IProps) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 1, ease: "easeOut" },
     },
   };
+
+  useEffect(() => {
+    if (lottieRef.current) {
+      lottieRef.current.play(); // Play the animation after it's loaded
+    }
+  }, []);
 
   return (
     <motion.section
@@ -85,33 +90,47 @@ const Contact = ({}: IProps) => {
       </p>
 
       <div className="flex items-center justify-between">
-        <form
-          ref={formRef}
-          onSubmit={sendEmail}
-          className="ml-auto mr-auto md:ml-0 md:mr-0"
-        >
-          <div className="flex items-start gap-2 mt-6 lg:mt-0 flex-col sm:flex-row sm:items-center">
+        <form ref={formRef} onSubmit={sendEmail} className="mx-auto md:mx-0">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8 mt-6 lg:mt-0">
+            <label
+              htmlFor="name"
+              className="text-base text-secondaryLightText dark:text-secondaryDarkText"
+            >
+              Your Name:
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="from_name"
+              required
+              placeholder="Your Name"
+              autoComplete="off"
+              disabled={isLoading}
+              className="input-field"
+            />
+          </div>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-6 lg:mt-6">
             <label
               htmlFor="email"
-              className="text-secondaryLightText dark:text-secondaryDarkText text-base"
+              className="text-base text-secondaryLightText dark:text-secondaryDarkText"
             >
               Email Address:
             </label>
             <input
               type="email"
               id="email"
-              name="from_name"
+              name="email"
               required
               placeholder="Email Address"
               autoComplete="off"
               disabled={isLoading}
-              className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-64 sm:w-[22rem] py-2 px-2 rounded-md focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] transition duration-200 hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf]"
+              className="input-field"
             />
           </div>
-          <div className="flex items-start gap-2 mt-6 flex-col sm:flex-row sm:items-center">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-6">
             <label
               htmlFor="message"
-              className="text-secondaryLightText dark:text-secondaryDarkText text-base"
+              className="text-base text-secondaryLightText dark:text-secondaryDarkText"
             >
               Your Message:
             </label>
@@ -122,15 +141,14 @@ const Contact = ({}: IProps) => {
               placeholder="Message"
               autoComplete="off"
               disabled={isLoading}
-              className="bg-[#3f3f4608] dark:bg-[#3f3f4626] border border-borderLight dark:border-borderDark w-64
-                sm:w-[22rem] py-2 px-2 rounded-md min-h-28 max-h-48 resize-y focus:outline-none focus:border-[#2dd4bf] dark:focus:border-[#2dd4bf] hover:border-[#2dd4bf] hover:dark:border-[#2dd4bf] transition duration-200"
+              className="input-field resize-y min-h-28 max-h-48"
             />
           </div>
-          <div className="text-center sm:text-start">
+          <div className="text-center sm:text-start mt-7">
             <button
-              className="project-btn mt-7 !w-28 border border-borderLight dark:border-borderDark hover:scale-90 flex items-center justify-center"
               type="submit"
               disabled={isLoading}
+              className="project-btn flex items-center justify-center"
             >
               {isLoading ? (
                 <Oval
@@ -145,18 +163,8 @@ const Contact = ({}: IProps) => {
               )}
             </button>
             {isSuccess && (
-              <div className="text-green-500 mt-4 flex items-center">
-                <Lottie
-                  lottieRef={lottieRef}
-                  onLoadedImages={() => {
-                    if (lottieRef.current) {
-                      lottieRef.current.setSpeed(0.5);
-                    }
-                  }}
-                  animationData={doneAnimation}
-                  className="h-12"
-                />
-                Your message has been sent successfully!
+              <div className="text-green-500 mt-4">
+                ✅ Your message has been sent successfully!
               </div>
             )}
           </div>
@@ -168,7 +176,7 @@ const Contact = ({}: IProps) => {
           animate={{
             opacity: 1,
             x: 0,
-            transition: { duration: 1, ease: "easeOut" },
+            transition: { duration: 1.2, ease: "easeOut" },
           }}
         >
           <Lottie

@@ -1,9 +1,10 @@
+import { LazyExoticComponent } from "react";
 import { IconType } from "react-icons";
 
 export interface ISkills {
   category: string;
-  categoryIcon: IconType;
-  skills: { icon: IconType; name: string }[];
+  categoryIcon: IconType | LazyExoticComponent<IconType>;
+  skills: { icon: IconType | LazyExoticComponent<IconType>; name: string }[];
 }
 
 export interface IEducation {
