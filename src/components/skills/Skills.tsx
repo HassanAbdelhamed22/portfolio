@@ -20,7 +20,7 @@ const Skills = () => {
     controls.start({
       opacity: 1,
       y: 0,
-      transition: { duration: 1, ease: "easeOut" },
+      transition: { duration: 1.5, ease: "easeOut" },
     });
   }
 
@@ -34,7 +34,7 @@ const Skills = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-lightText dark:text-darkText">
             My Skills
           </h2>
-          <p className="text-base lg:text-base text-lightAccent dark:text-darkAccent tracking-[4px] mt-2">
+          <p className="text-base lg:text-lg xl:text-xl text-lightAccent dark:text-darkAccent tracking-[4px] mt-2">
             What skills I have
           </p>
         </div>

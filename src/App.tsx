@@ -36,7 +36,7 @@ function App() {
     >
       <Suspense
         fallback={
-          <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-900">
+          <div className="fixed inset-0 flex items-center justify-center backdrop-blur-lg">
             <Oval
               visible={true}
               height="80"

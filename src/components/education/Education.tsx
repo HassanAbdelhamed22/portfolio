@@ -1,6 +1,7 @@
 import { educationData } from "../../data/index";
 import Card from "./Card";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Education = () => {
   // Define animation variants
@@ -9,6 +10,22 @@ const Education = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  // Framer Motion hooks for animations
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  // Start the animation when the element is in view
+  if (inView) {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.5, ease: "easeOut" },
+    });
+  }
+
   return (
     <section id="education" className="py-10 px-0 sm:px-4">
       <motion.div
@@ -16,16 +33,22 @@ const Education = () => {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
       >
-        <div className="text-center md:text-left">
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-lightText dark:text-darkText">
-            Education & Experience
-          </h2>
-          <p className="text-base lg:text-base xl:text-lg text-lightAccent dark:text-darkAccent tracking-wide mt-2">
-            My journey with CS
-          </p>
-        </div>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={controls}
+        >
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-lightText dark:text-darkText">
+              Education & Experience
+            </h2>
+            <p className="text-base lg:text-lg xl:text-xl text-lightAccent dark:text-darkAccent tracking-wide mt-2 text-center">
+              My journey with CS
+            </p>
+          </div>
+        </motion.div>
       </motion.div>
 
       <div className="mt-10 flex flex-col lg:flex-row gap-10">

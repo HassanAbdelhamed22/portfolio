@@ -40,14 +40,14 @@ const Hero = () => {
         type: "spring",
         stiffness: 200,
         damping: 20,
-        duration: 1,
+        duration: 1.2,
       },
     },
   };
 
   const textVariant = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 1.3 } },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.5, duration: 1.2 } },
   };
 
   const iconVariant = {
@@ -55,7 +55,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { delay: 0.8, duration: 1.2, staggerChildren: 0.2 },
+      transition: { delay: 1, duration: 1.4, staggerChildren: 0.2 },
     },
   };
 
@@ -193,7 +193,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 100,
             damping: 20,
-            duration: 1,
+            duration: 1.3,
           }}
         >
           <Lottie

@@ -17,7 +17,7 @@ const Contact = ({}: IProps) => {
 
   // Animation controls
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.4 });
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -61,7 +61,7 @@ const Contact = ({}: IProps) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1, ease: "easeOut" },
+      transition: { duration: 1.3, ease: "easeOut" },
     },
   };
 
@@ -176,7 +176,7 @@ const Contact = ({}: IProps) => {
           animate={{
             opacity: 1,
             x: 0,
-            transition: { duration: 1.2, ease: "easeOut" },
+            transition: { duration: 1.5, ease: "easeOut" },
           }}
         >
           <Lottie
