@@ -60,18 +60,18 @@ const Education = () => {
           </div>
           <div className="w-full border-l-4 border-black border-opacity-30 flex flex-col gap-10">
             <Card
-              title={educationData[1].title}
-              location={educationData[1].location}
-              date={educationData[1].date}
-              description={educationData[1].description}
-              className="h-1/2"
-            />
-            <Card
               title={educationData[2].title}
               location={educationData[2].location}
               date={educationData[2].date}
               description={educationData[2].description}
-              GPA={educationData[2].GPA}
+              className="h-1/2"
+            />
+            <Card
+              title={educationData[3].title}
+              location={educationData[3].location}
+              date={educationData[3].date}
+              description={educationData[3].description}
+              GPA={educationData[3].GPA}
               className="h-1/2"
             />
           </div>
@@ -88,6 +88,13 @@ const Education = () => {
               location={educationData[0].location}
               date={educationData[0].date}
               description={educationData[0].description}
+              className="h-full"
+            />
+            <Card
+              title={educationData[1].title}
+              location={educationData[1].location}
+              date={educationData[1].date}
+              description={educationData[1].description}
               className="h-full"
             />
           </div>

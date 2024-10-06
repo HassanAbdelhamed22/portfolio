@@ -19,6 +19,7 @@ import portfolio from "./portfolio.webp";
 import prayerTimings from "./prayer timings.webp";
 import productsBuilder from "./products bulider.webp";
 import startReact from "./start react.webp";
+import todo from "./todo.png";
 
 export {
   adminPage,
@@ -42,4 +43,5 @@ export {
   prayerTimings,
   productsBuilder,
   startReact,
+  todo,
 };

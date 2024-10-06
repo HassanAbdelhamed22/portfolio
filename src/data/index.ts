@@ -1,6 +1,7 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 
-const FaHtml5 = React.lazy(() =>
+// Icon imports
+const FaHtml5 = lazy(() =>
   import("react-icons/fa").then((module) => ({ default: module.FaHtml5 }))
 );
 const FaCss3Alt = lazy(() =>
@@ -36,11 +37,11 @@ const FaCode = lazy(() =>
 const FaTools = lazy(() =>
   import("react-icons/fa").then((module) => ({ default: module.FaTools }))
 );
-const FaDatabase = lazy(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaDatabase }))
-);
 const FaLaptopCode = lazy(() =>
   import("react-icons/fa").then((module) => ({ default: module.FaLaptopCode }))
+);
+const FaNodeJs = lazy(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaNodeJs }))
 );
 
 const SiTypescript = lazy(() =>
@@ -69,15 +70,27 @@ const SiVisualstudiocode = lazy(() =>
 const SiMysql = lazy(() =>
   import("react-icons/si").then((module) => ({ default: module.SiMysql }))
 );
-const SiDotnet = lazy(() =>
-  import("react-icons/si").then((module) => ({ default: module.SiDotnet }))
-);
 const SiCplusplus = lazy(() =>
   import("react-icons/si").then((module) => ({ default: module.SiCplusplus }))
 );
 const SiFramer = lazy(() =>
   import("react-icons/si").then((module) => ({ default: module.SiFramer }))
 );
+const SiFigma = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiFigma }))
+);
+const SiTrello = lazy(() =>
+  import("react-icons/si").then((module) => ({ default: module.SiTrello }))
+);
+import {
+  FaTasks,
+  FaObjectGroup,
+  FaClipboardList,
+  FaFileSignature,
+  FaPuzzlePiece,
+  FaDatabase,
+} from "react-icons/fa";
+import { SiDatacamp } from "react-icons/si";
 
 import { IEducation, IProject, ISkills } from "../interfaces";
 import {
@@ -102,52 +115,62 @@ import {
   prayerTimings,
   productsBuilder,
   startReact,
+  todo,
 } from "../assets/product Img/index";
 
 const skillsList: ISkills[] = [
   {
-    category: "Front-End Tools",
-    categoryIcon: FaLaptopCode,
-    skills: [
-      { icon: FaHtml5, name: "HTML" },
-      { icon: FaCss3Alt, name: "CSS" },
-      { icon: FaJsSquare, name: "JavaScript" },
-      { icon: SiTypescript, name: "TypeScript" },
-      { icon: FaReact, name: "React.js" },
-      { icon: SiTailwindcss, name: "Tailwind CSS" },
-      { icon: SiBootstrap, name: "Bootstrap" },
-      { icon: FaSass, name: "SASS" },
-      { icon: SiFramer, name: "Framer Motion" },
-    ],
-  },
-  {
     category: "Programming Languages",
     categoryIcon: FaCode,
     skills: [
-      { icon: FaPython, name: "Python" },
-      { icon: SiCsharp, name: "C#" },
+      { icon: FaJsSquare, name: "JavaScript" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: FaHtml5, name: "HTML" },
+      { icon: FaCss3Alt, name: "CSS" },
       { icon: SiCplusplus, name: "C/C++" },
+      { icon: FaPython, name: "Python" },
       { icon: FaJava, name: "Java" },
       { icon: FaPhp, name: "PHP" },
+      { icon: SiCsharp, name: "C#" },
+      { icon: SiMysql, name: "MyySQL" },
     ],
   },
   {
-    category: "Back-End Technologies",
-    categoryIcon: FaDatabase,
+    category: "Frameworks & Libraries",
+    categoryIcon: FaLaptopCode,
     skills: [
-      { icon: SiDotnet, name: "ASP.NET Web Forms" },
-      { icon: SiMysql, name: "MySQL" },
+      { icon: FaReact, name: "React.js" },
+      { icon: FaNodeJs, name: "Node.js" },
+      { icon: SiBootstrap, name: "Bootstrap" },
+      { icon: FaSass, name: "SASS" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: SiFramer, name: "Material UI" },
     ],
   },
   {
-    category: "Other Tools",
+    category: "Developer Tools",
     categoryIcon: FaTools,
     skills: [
-      { icon: FaGitAlt, name: "Git" },
-      { icon: SiPostman, name: "Postman" },
-      { icon: FaDocker, name: "Docker" },
+      { icon: FaGitAlt, name: "GitHub" },
       { icon: SiVisualstudiocode, name: "VS Code" },
+      { icon: SiPostman, name: "Postman" },
+      { icon: FaDocker, name: "Docker (Basics)" },
+      { icon: SiFigma, name: "Figma" },
+      { icon: SiTrello, name: "Trello" },
       { icon: SiVercel, name: "Vercel" },
+    ],
+  },
+  {
+    category: "General Skills",
+    categoryIcon: FaTools,
+    skills: [
+      { icon: SiDatacamp, name: "Data Structures" },
+      { icon: FaObjectGroup, name: "Object-Oriented Programming (OOP)" },
+      { icon: FaTasks, name: "Algorithms" },
+      { icon: FaClipboardList, name: "Agile Methodologies" },
+      { icon: FaFileSignature, name: "Test-Driven Development (TDD)" },
+      { icon: FaPuzzlePiece, name: "Design Patterns" },
+      { icon: FaDatabase, name: "Software Architecture" },
     ],
   },
 ];
@@ -156,14 +179,26 @@ export default skillsList;
 
 export const educationData: IEducation[] = [
   {
+    date: "(Sep 2024 - Oct 2024)",
+    title: "Software Engineer Trainee",
+    location: "Orange Digital Center",
+    description: [
+      "Developed SQL and MongoDB databases with ERD to optimize data flow and scalability.",
+      "Created a full-stack Flask project with session-based authentication and Role-Based Access Control (RBAC), securing the app with CSRF protection using SQLAlchemy ORM.",
+      "Built a To-Do List application using Agile principles, managing user stories in Figma and product backlog in Trello with Test-Driven Development (TDD).",
+      "Designed a modular architecture for a Distributed Web Crawler, ensuring scalability and performance.",
+      "Learned software design patterns (Strategy, Observer, Decorator, Adapter, MVC, Singleton) through a 'Battle ofPatterns' game.",
+    ],
+  },
+  {
     date: "(Jul 2024 - Aug 2024)",
-    title: "Integration and Business Automation",
+    title: "Integration and Business Automation Developer",
     location: "SAIB Bank",
     description: [
-      "Collaborated on-site for project alignment.",
-      "Gained expertise in SOAP API, REST API, Middleware, ESQL, and SQL.",
-      "Developed four applications using IBM App Connect Enterprise to enhance data flow and efficiency.",
-      "Learned ASP.NET Web Forms and built a user management project using ASP.NET and MySQL.",
+      "Developed a user management system using ASP.NET and MySQL, featuring smart login, CRN-based search, and profile management.",
+      "Built middleware applications with IBM App Connect Enterprise, enhancing integration through WSDL files and message brokers.",
+      "Implemented admin features like Excel uploads and CRN data management, ensuring effective duplicate handling.",
+      "Enhanced system integration via SOAP and REST APIs, boosting operational efficiency.",
     ],
   },
   {
@@ -198,6 +233,14 @@ export const projectData: IProject[] = [
     repoLink: "https://github.com/HassanAbdelhamed22/E-Commerce",
     liveLink: "https://hassanabdelhamed22.github.io/E-Commerce/",
     category: "React",
+  },
+  {
+    image: todo,
+    title: "Fullstack Todo List App",
+    description:
+      "Implemented user authentication with form validation, including profile management and password resets, developed CRUD operations for todos with search, sorting, pagination, and completion features, and designed using TypeScript, Tailwind CSS, React.js, Strapi, Headless UI.",
+    repoLink: "https://github.com/HassanAbdelhamed22/fullstack-todo-app",
+    category: "React & TS",
   },
   {
     image: fitnessApp,
