@@ -171,7 +171,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="https://drive.google.com/file/d/1pAQa5KwTOwJ60K7W0m2sD9ZZ1H2PwxpR/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1t8vNlAOgUspdwI3UEAKB6--ve6I713aF/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download CV"
